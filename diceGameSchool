@@ -1,0 +1,46 @@
+ /*
+ * Created by: Michael Balcerzak
+ * Created on: 13-Sep-2016
+ * Created for: ICS4U
+ * Daily Assignment – #1-05
+ * This program rolls the dice and the user guesses the number
+*/
+ 
+ import java.util.Random;
+ import java.util.Scanner;
+
+ public class diceGame {
+
+  public static void main(String[] args)
+  {
+     Random rnd = new Random();
+
+     // Create scanner object
+     Scanner input = new Scanner(System.in);
+
+     //Variables
+     int numberOfTries = 0;
+     int diceNumber= rnd.nextInt(6) + 1;
+     double usersNumber = 0;
+
+     // Make the person enter
+      System.out.println("Enter a number that you think is on the dice");
+      usersNumber = input.nextDouble();
+
+     while (!(diceNumber == usersNumber))
+     {
+      System.out.print("You got it wrong.    ");
+
+      numberOfTries = numberOfTries + 1;
+
+      // Make the person enter
+      System.out.println("Enter a number that you think is on the dice");
+      usersNumber = input.nextDouble();
+     }
+
+     System.out.print("You got it right. The dice's number is " +
+ diceNumber + ". Number of guesses: " + numberOfTries);
+
+  }
+
+ }
